@@ -232,33 +232,45 @@ const handleChange = async (e) => {
 
 
 const handleSubmit = (e) => {
-  e.preventDefault();
+  e.preventDefault(); // Prevent the default form submission
 
+  // Validate that at least one competition is selected if "Yes" is chosen
+  if (
+    isOtherCompetitions === "yes" &&
+    !formData.pet_trick_competition &&
+    !formData.pet_photo_competition
+  ) {
+    toast.error("Please select at least one competition before registering.");
+    return; // Stop form submission if validation fails
+  }
+
+  // Prepare FormData for submission
   const data = new FormData();
 
-  // Append all other form data
+  // Append all form data (including file uploads) to FormData
   Object.keys(formData).forEach((key) => {
     if (formData[key] !== null && formData[key] !== undefined) {
       data.append(key, formData[key]);
     }
   });
 
-  console.log("Submitting data:", Array.from(data.entries()));
+  console.log("Submitting data:", Array.from(data.entries())); // For debugging
 
+  // Make the API call to submit the form data
   fetch("http://127.0.0.1:8000/api/pet-registration/", {
     method: "POST",
     body: data,
     headers: {
-      "X-CSRFToken": getCookie("csrftoken"), // CSRF token if needed
+      "X-CSRFToken": getCookie("csrftoken"), // Include CSRF token if required by your backend
     },
   })
-    .then((response) => response.json())
+    .then((response) => response.json()) // Parse the JSON response
     .then((responseData) => {
       if (responseData.success) {
         toast.success(
           responseData.message || "Registration submitted successfully!"
         );
-        setFormData(initialFormState); // Reset form
+        setFormData(initialFormState); // Reset form after successful submission
       } else {
         toast.error(
           responseData.error || "Submission failed. Please try again."
@@ -270,6 +282,7 @@ const handleSubmit = (e) => {
       toast.error("Form submission failed. Please try again.");
     });
 };
+
 
 
 
@@ -773,21 +786,84 @@ const handleSubmit = (e) => {
                                   const terms = [];
                                   if (formData.pet_trick_competition) {
                                     terms.push(
-                                      "You must be eligible for the Pet Trick Competition.",
-                                      "Follow the specific guidelines for tricks.",
-                                      "Ensure submission by the competition deadline."
+                                      <>
+                                        <span
+                                          style={{
+                                            color: "red",
+                                            
+                                          }}
+                                        >
+                                          <u>
+                                            <b>Pet Trick Competition</b>
+                                          </u>
+                                        </span>
+                                        <ul>
+                                          
+                                          <li style={{ listStyleType: "disc" }}>
+                                            Submit your pet's trick video via
+                                            WhatsApp at{" "}
+                                            <a
+                                              href="https://wa.me/971569064547"
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                            >
+                                              +971 56 9064547
+                                            </a>
+                                            .
+                                          </li>
+                                          <li style={{ listStyleType: "disc" }}>
+                                            We will collaborate with you to
+                                            share your video on our
+                                            Instagram/Facebook.
+                                          </li>
+                                          <li style={{ listStyleType: "disc" }}>
+                                            The winner will be announced live at
+                                            the event, based on the most likes
+                                            and comments.
+                                          </li>
+                                        </ul>
+                                      </>
                                     );
                                   }
                                   if (formData.pet_photo_competition) {
                                     terms.push(
-                                      "You must be eligible for the Pet Photo Competition.",
-                                      "Adhere to the photo quality guidelines.",
-                                      "Submit your entry before the deadline."
+                                      <>
+                                        <br />
+                                        <span
+                                          style={{
+                                            color: "red",
+                                            paddingLeft: "10px",
+                                          }}
+                                        >
+                                          <u>
+                                            <b>Pet Photo Competition</b>
+                                          </u>
+                                        </span>
+                                        <ul>
+                                        
+                                          <li style={{ listStyleType: "disc" }}>
+                                            Submit your pet photo in person at
+                                            the event.
+                                          </li>
+                                          <li style={{ listStyleType: "disc" }}>
+                                            Photo must be printed in 4x6 size.
+                                          </li>
+                                          <li style={{ listStyleType: "disc" }}>
+                                            The winner will be announced live at
+                                            the event.
+                                          </li>
+                                        </ul>
+                                      </>
                                     );
                                   }
                                   if (terms.length === 0) {
                                     terms.push(
-                                      "Default terms apply for your selection."
+                                      "All participating pets should enter through the designated entrance at the venue.",
+                                      "All pets must undergo a vet check and provide proof of vaccination (Pet Passport or a letter from a reputable veterinary clinic must be sent in advance). Vaccination should have been done within the last 2 years.",
+                                      "All pets will be checked by our official vets for health conditions.",
+                                      "All dogs must pass through the Dog Assessment Area and collect color-coded ribbons issued by the assessment team.",
+                                      "The ribbons must be worn by the dogs throughout their time at the venue.",
+                                      "Dogs must always be on a leash. No extendable leashes are permitted in the venue.",
                                     );
                                   }
 
@@ -818,7 +894,7 @@ const handleSubmit = (e) => {
                                 <li
                                   style={{
                                     textAlign: "left",
-                                    listStyleType: "disc",
+                                   
                                   }}
                                   key={index}
                                 >

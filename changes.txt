@@ -117,4 +117,62 @@ const handleSubmit = (e) => {
 
 
 
+selecting yes and submittion 
+
+const handleSubmit = (e) => {
+  e.preventDefault(); // Prevent the default form submission
+
+  // Validate that at least one competition is selected if "Yes" is chosen
+  if (
+    isOtherCompetitions === "yes" &&
+    !formData.pet_trick_competition &&
+    !formData.pet_photo_competition
+  ) {
+    toast.error("Please select at least one competition before registering.");
+    return; // Stop form submission if validation fails
+  }
+
+  // Prepare FormData for submission
+  const data = new FormData();
+
+  // Append all form data (including file uploads) to FormData
+  Object.keys(formData).forEach((key) => {
+    if (formData[key] !== null && formData[key] !== undefined) {
+      data.append(key, formData[key]);
+    }
+  });
+
+  console.log("Submitting data:", Array.from(data.entries())); // For debugging
+
+  // Make the API call to submit the form data
+  fetch("http://127.0.0.1:8000/api/pet-registration/", {
+    method: "POST",
+    body: data,
+    headers: {
+      "X-CSRFToken": getCookie("csrftoken"), // Include CSRF token if required by your backend
+    },
+  })
+    .then((response) => response.json()) // Parse the JSON response
+    .then((responseData) => {
+      if (responseData.success) {
+        toast.success(
+          responseData.message || "Registration submitted successfully!"
+        );
+        setFormData(initialFormState); // Reset form after successful submission
+      } else {
+        toast.error(
+          responseData.error || "Submission failed. Please try again."
+        );
+      }
+    })
+    .catch((error) => {
+      console.error("Error during submission:", error);
+      toast.error("Form submission failed. Please try again.");
+    });
+};
+
+
+
+
+
 
