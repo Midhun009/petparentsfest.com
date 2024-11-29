@@ -27,7 +27,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/petparentsexpo/">
+                  <a href="https://www.instagram.com/petparentsfest/#">
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </li>
@@ -35,21 +35,36 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-lg-4 col-xs-4">
-  <div className="logo" style={{ display: 'flex', alignItems: 'center' }}>
-    <a href="https://thewondermom.club/" target="_blank" rel="noopener noreferrer">
-      <img src="https://thewondermom.club/static/assets/images/logo.png" alt="The WonderMoM Fest" width="80px" />
-    </a>
-    <a href="/" rel="noopener noreferrer">
-      <img src="/images/logo.webp" alt="petexpor Logo" width="100px" style={{ marginLeft: '20px' }} />
-    </a>
-  </div>
-
-
-
+            <div
+              className="logo"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <a
+                href="https://thewondermom.club/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://thewondermom.club/static/assets/images/logo.png"
+                  alt="The WonderMoM Fest"
+                  width="80px"
+                />
+              </a>
+              <a href="/" rel="noopener noreferrer">
+                <img
+                  src="/images/logo.webp"
+                  alt="petexpor Logo"
+                  width="100px"
+                  style={{ marginLeft: "20px" }}
+                />
+              </a>
+            </div>
           </div>
           <div className="col-lg-4 col-xs-4">
             <div className="right-text-content">
-              <p style={{textTransform: 'capitalize'}}>© 2024 Gulf Time Media LLC. All Rights Reserved.</p>
+              <p style={{ textTransform: "capitalize" }}>
+                © 2024 Gulf Time Media LLC. All Rights Reserved.
+              </p>
             </div>
           </div>
         </div>
