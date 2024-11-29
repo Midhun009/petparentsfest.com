@@ -404,3 +404,7 @@
   line-height: 20px;
   text-align: center;
 }
+
+.terms{
+  list-style: disc;
+}

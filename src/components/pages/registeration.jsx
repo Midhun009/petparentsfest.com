@@ -34,8 +34,8 @@
       socialized_with_pets_people: "",
       category_id: null,
       weight: "",
-      pet_trick_competition: false,
-      pet_photo_competition: false,
+      pet_talent_show: false,
+      snap_my_pet: false,
       instagram:'',
     };
 
@@ -237,8 +237,8 @@ const handleSubmit = (e) => {
   // Validate that at least one competition is selected if "Yes" is chosen
   if (
     isOtherCompetitions === "yes" &&
-    !formData.pet_trick_competition &&
-    !formData.pet_photo_competition
+    !formData.pet_talent_show &&
+    !formData.snap_my_pet
   ) {
     toast.error("Please select at least one competition before registering.");
     return; // Stop form submission if validation fails
@@ -729,45 +729,45 @@ const handleSubmit = (e) => {
                             <div className="custom-checkbox">
                               <input
                                 type="checkbox"
-                                id="pet_trick_competition"
-                                name="pet_trick_competition"
-                                checked={formData.pet_trick_competition}
+                                id="pet_talent_show"
+                                name="pet_talent_show"
+                                checked={formData.pet_talent_show}
                                 onChange={(e) =>
                                   setFormData((prevData) => ({
                                     ...prevData,
-                                    pet_trick_competition: e.target.checked,
+                                    pet_talent_show: e.target.checked,
                                   }))
                                 }
                                 className="custom-checkbox-input"
                               />
                               <label
-                                htmlFor="pet_trick_competition"
+                                htmlFor="pet_talent_show"
                                 className="custom-checkbox-label"
                               >
-                                Pet Trick Competition
+                                Pet Talent Show
                               </label>
                             </div>
 
-                            {/* Pet Photo Competition */}
+                            {/* Snap My Pet */}
                             <div className="custom-checkbox">
                               <input
                                 type="checkbox"
-                                id="pet_photo_competition"
-                                name="pet_photo_competition"
-                                checked={formData.pet_photo_competition}
+                                id="snap_my_pet"
+                                name="snap_my_pet"
+                                checked={formData.snap_my_pet}
                                 onChange={(e) =>
                                   setFormData((prevData) => ({
                                     ...prevData,
-                                    pet_photo_competition: e.target.checked,
+                                    snap_my_pet: e.target.checked,
                                   }))
                                 }
                                 className="custom-checkbox-input"
                               />
                               <label
-                                htmlFor="pet_photo_competition"
+                                htmlFor="snap_my_pet"
                                 className="custom-checkbox-label"
                               >
-                                Pet Photo Competition
+                                Snap My Pet
                               </label>
                             </div>
 
@@ -784,21 +784,19 @@ const handleSubmit = (e) => {
                                 onClick={() => {
                                   // Generate terms based on the selected competitions
                                   const terms = [];
-                                  if (formData.pet_trick_competition) {
+                                  if (formData.pet_talent_show) {
                                     terms.push(
                                       <>
                                         <span
                                           style={{
                                             color: "red",
-                                            
                                           }}
                                         >
                                           <u>
-                                            <b>Pet Trick Competition</b>
+                                            <b>Pet Talent Show</b>
                                           </u>
                                         </span>
                                         <ul>
-                                          
                                           <li style={{ listStyleType: "disc" }}>
                                             Submit your pet's trick video via
                                             WhatsApp at{" "}
@@ -825,7 +823,7 @@ const handleSubmit = (e) => {
                                       </>
                                     );
                                   }
-                                  if (formData.pet_photo_competition) {
+                                  if (formData.snap_my_pet) {
                                     terms.push(
                                       <>
                                         <br />
@@ -836,11 +834,10 @@ const handleSubmit = (e) => {
                                           }}
                                         >
                                           <u>
-                                            <b>Pet Photo Competition</b>
+                                            <b>Snap My Pet</b>
                                           </u>
                                         </span>
                                         <ul>
-                                        
                                           <li style={{ listStyleType: "disc" }}>
                                             Submit your pet photo in person at
                                             the event.
@@ -858,12 +855,43 @@ const handleSubmit = (e) => {
                                   }
                                   if (terms.length === 0) {
                                     terms.push(
-                                      "All participating pets should enter through the designated entrance at the venue.",
-                                      "All pets must undergo a vet check and provide proof of vaccination (Pet Passport or a letter from a reputable veterinary clinic must be sent in advance). Vaccination should have been done within the last 2 years.",
-                                      "All pets will be checked by our official vets for health conditions.",
-                                      "All dogs must pass through the Dog Assessment Area and collect color-coded ribbons issued by the assessment team.",
-                                      "The ribbons must be worn by the dogs throughout their time at the venue.",
-                                      "Dogs must always be on a leash. No extendable leashes are permitted in the venue.",
+                                      <>
+                                        <ul>
+                                          <li className="terms">
+                                            All participating pets should enter
+                                            through the designated entrance at
+                                            the venue.
+                                          </li>
+                                          <li className="terms">
+                                            All pets must undergo a vet check
+                                            and provide proof of vaccination
+                                            (Pet Passport or a letter from a
+                                            reputable veterinary clinic must be
+                                            sent in advance). Vaccination should
+                                            have been done within the last 2
+                                            years.
+                                          </li>
+                                          <li className="terms">
+                                            All pets will be checked by our
+                                            official vets for health conditions.
+                                          </li>
+                                          <li className="terms">
+                                            All dogs must pass through the Dog
+                                            Assessment Area and collect
+                                            color-coded ribbons issued by the
+                                            assessment team.
+                                          </li>
+                                          <li className="terms">
+                                            The ribbons must be worn by the dogs
+                                            throughout their time at the venue.
+                                          </li>
+                                          <li className="terms">
+                                            Dogs must always be on a leash. No
+                                            extendable leashes are permitted in
+                                            the venue.
+                                          </li>
+                                        </ul>
+                                      </>
                                     );
                                   }
 
@@ -894,7 +922,6 @@ const handleSubmit = (e) => {
                                 <li
                                   style={{
                                     textAlign: "left",
-                                   
                                   }}
                                   key={index}
                                 >
