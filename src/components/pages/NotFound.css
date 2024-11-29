@@ -1,0 +1,107 @@
+/* NotFoundPage.css */
+
+/* Dark mode and light mode base styles */
+.dark .bg-dark {
+    background-color: #1a202c; /* Dark background */
+  }
+  .dark .dark:text-light {
+    color: #f7fafc; /* Light text in dark mode */
+  }
+  
+  /* Loading screen */
+  .loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  /* 404 page number */
+  .not-found-number {
+    font-size: 9rem;
+    font-weight: 600;
+    color: #f56565; /* Light red */
+  }
+  .dark .not-found-number {
+    color: #e53e3e; /* Dark red */
+  }
+  
+  /* Page not found message */
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4a5568; /* Gray */
+  }
+  .dark .page-title {
+    color: #f7fafc; /* Light in dark mode */
+  }
+  
+  /* Search form */
+  .search-input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.375rem 0 0 0.375rem;
+    outline: none;
+    background-color: #edf2f7; /* Light background */
+    border: 1px solid #e2e8f0; /* Border */
+  }
+  .dark .search-input {
+    background-color: #2d3748; /* Darker background */
+  }
+  
+  .search-button {
+    padding: 0.5rem;
+    background-color: #3182ce; /* Blue */
+    color: white;
+    border-radius: 0 0.375rem 0.375rem 0;
+    outline: none;
+    transition: background-color 0.2s ease;
+  }
+  .search-button:hover {
+    background-color: #2b6cb0;
+  }
+  .dark .search-button {
+    background-color: #2c5282;
+  }
+  .dark .search-button:hover {
+    background-color: #2a4365;
+  }
+  
+  /* Toggle button styles */
+  .theme-toggle-btn {
+    padding: 0.5rem;
+    background-color: #3182ce;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+  }
+  .theme-toggle-btn:hover {
+    background-color: #2b6cb0;
+  }
+  .dark .theme-toggle-btn {
+    background-color: #2c5282;
+  }
+  .dark .theme-toggle-btn:hover {
+    background-color: #2a4365;
+  }
+  
+  /* Original project button */
+  .original-project-btn {
+    padding: 0.5rem 1rem;
+    background-color: #e53e3e; /* Red */
+    color: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+  }
+  .original-project-btn:hover {
+    background-color: #c53030;
+  }
+  

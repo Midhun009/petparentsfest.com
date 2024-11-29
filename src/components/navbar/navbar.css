@@ -1,0 +1,47 @@
+/* navbar.css */
+
+.floating-navbar {
+    position: fixed; 
+    top: 50%; 
+    right: 0; 
+    transform: translateY(-50%); 
+    background-color: transparent; 
+    padding: 0; 
+    border-radius: 0 0 0 10px; 
+    z-index: 1000; 
+  }
+  
+  .navbar-list {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .navbar-list li {
+    margin: 0; 
+  }
+  
+  .navbar-list a {
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 40px; 
+    height: 40px; 
+    transition: background-color 0.3s, transform 0.3s; 
+  }
+  
+  /* Individual icon colors */
+  .home-icon { background-color: #e10000; } 
+  .whatsapp-icon { background-color: #2FBE2D; } 
+  .instagram-icon { background-color: #E1306C; } 
+  .linkedin-icon { background-color: #0077b5; } 
+  .facebook-icon{ background-color: #3b5998; } 
+  /* Hover effect for icons */
+  .navbar-list a:hover {
+    transform: scale(1.1); 
+  }

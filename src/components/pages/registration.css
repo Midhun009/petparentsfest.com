@@ -1,0 +1,406 @@
+.section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px; /* Adjust this to align content */
+  }
+  
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .section .container {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+  }
+  
+  .section .row {
+    align-items: start; /* Align both columns at the top */
+  }
+  
+  .contact-form, .left-text-content {
+    margin-top: 0;
+  }
+  
+  .file-upload {
+    position: relative;
+  }
+  
+
+  
+ 
+  
+  .file-upload {
+    display: flex;
+    flex-direction: column; /* Stack label above the input */
+    margin-bottom: 15px; /* Space between fields */
+    text-align: left;
+  }
+  
+  .file-upload label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-size: 13px;
+  }
+  
+  .file-upload input[type="file"] {
+    padding: 10px; /* Padding for the file input button */
+  }
+  
+  .required {
+    color: red; 
+    font-size: 15px;
+    font-weight:normal;
+  }
+  .reg-title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 26px;
+    color: #2a2a2a;
+    margin-bottom: 17px;
+  }
+  .terms-conditions h2{
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .terms-conditions ul{
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .terms-conditions ul {
+     
+    padding-left: 20px;   
+  }
+  
+  .terms-conditions li {
+    list-style: disc !important;
+    margin-bottom: 8px;    
+  }
+  .scrollable-box {
+    max-height: 300px;
+    overflow-y: auto;  
+    padding: 10px;
+    border: 1px solid #cccccc91; 
+    border-radius: 5px;
+    background: radial-gradient(#070707, #8b8b8b2e);
+  }
+  
+  /* Custom scrollbar styles */
+  .scrollable-box::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .scrollable-box::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+    border-radius: 5px; 
+  }
+  
+  .scrollable-box::-webkit-scrollbar-thumb {
+    background: #8b8b8b7a; 
+    border-radius: 5px; 
+  }
+  
+  .scrollable-box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+
+
+
+
+  .enquiry-form {
+    max-width: 500px; /* Adjust this value to your preference */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+
+  .enquiry-section {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the start */
+    background-size: cover;
+    padding: 40px;
+    
+  }
+  .pagebackground {
+    min-height: '100vh';
+    background-size: 'cover';
+    background-position: 'center' 
+  }
+  
+  .text-left {
+    color: white; /* Example text color */
+    padding-right: 20px; /* Spacing between text and form */
+    flex: 1; /* Take equal space */
+  }
+  .text-left h2{
+    line-height: 40px;
+    margin-top: 9px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .text-left h6{
+    position: relative;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-left: 40px;
+  }
+  
+  .text-left h6:before {
+    width: 30px;
+    height: 1px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    background-color: #ffffff;
+  }
+  
+  .contact-form {
+    background-color: #ffffff; /* Semi-transparent form background */
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1; /* Take equal space */
+  }
+  
+  .reg-title {
+    margin-bottom: 20px; /* Space below title */
+  }
+  
+  .main-button {
+    background-color: #007bff; /* Example button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .success {
+    color: green; /* Success message color */
+  }
+  
+  .error {
+    color: red; /* Error message color */
+  }
+  
+  .package-details ul {
+    padding-left: 20px; /* Indent the list */
+   
+    margin-bottom: 15px;
+  }
+  
+  .package-details li {
+    margin-bottom: 5px; /* Space between list items */
+    list-style: disc !important;
+  }
+  
+
+  
+  
+
+  .ticket-section {
+    display: flex;
+    justify-content: space-between; /* Space between the content and form */
+    padding: 40px; /* Add padding if needed */
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: row; /* Align children in a row */
+    width: 100%; /* Full width */
+  }
+  
+  .text-left {
+    flex: 1; /* Allow this section to take available space */
+    padding-right: 20px; /* Add space between text and form */
+  }
+  
+  .ticket-form {
+    flex: 0 0 450px; /* Fixed width for the form */
+    max-width: 100%; /* Ensure it does not exceed container width */
+    background: rgb(255, 255, 255); /* Background for readability */
+    padding: 20px; /* Padding around the form */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .scrollable-box {
+    max-height: 420px; /* Adjust height as needed */
+    overflow-y: auto; /* Scrollable */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .ticket-section {
+      flex-direction: column; /* Stack vertically on small screens */
+      padding: 20px; /* Reduce padding */
+    }
+  
+    .text-left {
+      padding-right: 0; /* Reset padding on smaller screens */
+      margin-bottom: 20px; /* Space between text and form */
+    }
+  
+    .ticket-form {
+      width: 100%; /* Full width on smaller screens */
+      flex: none; /* Reset flex properties */
+      
+    }
+  }
+  
+
+
+
+  @media (max-width: 768px) {
+    .registration-container {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+    }
+  
+    .contact-form {
+      order: 1; /* Ensure the registration form comes first */
+    }
+  
+    .terms-conditions {
+      order: 2; /* Ensure the terms and conditions come second */
+      margin-top: 20px; /* Add some space between sections */
+    }
+  
+    /* Additional styles to ensure proper spacing and alignment */
+    .terms-conditions {
+      padding: 10px; /* Add padding for better touch target */
+    }
+  }
+  
+
+
+/* Custom styles for Toastify toasts */
+.custom-toast-container {
+  z-index: 9999; /* Ensure it appears on top */
+}
+
+.custom-toast {
+  background-color: #333 !important; /* Ensures background is consistent */
+  color: white !important;
+  border-radius: 4px !important;
+  padding: 16px !important;
+}
+
+.custom-toast-body {
+  font-size: 14px !important;
+}
+.toast-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+.toast-button:hover {
+  background-color: #45a049;
+}
+
+
+
+  .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.custom-modal {
+  max-height: 90vh; /* Set maximum height to 90% of the viewport */
+  overflow-y: auto; /* Enable vertical scrolling for long content */
+  width: 50%; /* Optional: Adjust width */
+  margin: auto; /* Center the modal */
+  padding: 20px; /* Add padding */
+  background: white; /* Background color */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+@media screen and (max-width: 768px) {
+  .custom-modal {
+    width: 80%; 
+  }
+  
+}
+
+
+
+
+
+/* Hide the default checkbox */
+.custom-checkbox-input {
+  display: none;
+}
+
+/* Style for custom checkbox container */
+.custom-checkbox {
+ 
+  margin-right: 15px;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Custom checkbox style */
+.custom-checkbox-label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Create a custom checkbox */
+.custom-checkbox-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #007bff; /* Border color */
+  background-color: #fff;
+  border-radius: 4px; /* Round corners */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Custom checkbox checked style */
+.custom-checkbox-input:checked + .custom-checkbox-label::before {
+  background-color: #007bff; /* Background color when checked */
+  border-color: #007bff; /* Border color when checked */
+}
+
+/* Style for checkmark inside the custom checkbox */
+.custom-checkbox-input:checked + .custom-checkbox-label::after {
+  content: '✔';
+  position: absolute;
+  left: 4px;
+  top: 0px; 
+  color: white;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}

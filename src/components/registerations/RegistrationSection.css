@@ -1,0 +1,173 @@
+.call-action {
+  position: relative;
+  background-image: url('/src/images/about.webp'); /* Adjust this path as needed */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; 
+  /* height: 370px;  */
+}
+
+/* Overlay with semi-transparent color */
+.call-action .overlay {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  opacity: 0.8;
+}
+
+.call-action .content {
+  text-align: center;
+  margin-top: 37px;
+  margin-bottom: 37px;
+}
+
+.call-action .content h2 {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.call-action .content p {
+  color: #fff;
+  margin: 25px 0px;
+  font-size: 17px;
+}
+
+.call-action .content .btn {
+  background: #fff;
+  margin-right: 20px;
+  font-weight: 500;
+  border: 10px solid #ffffff00;
+  color: #1a76d1;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.call-action .content .btn:hover {
+  background: #1a76d1;
+  color: #000052;
+}
+
+.call-action .content .second {
+  border: 10px solid #ffffff00;
+  background: transparent;
+  color: #fff !important;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.call-action .content .second:hover {
+  color: #1A76D1;
+  border-color: transparent;
+  background: #ffffff3b;
+}
+
+.call-action .content .second i {
+  margin-left: 10px;
+}
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .call-action .content {
+    padding: 80px 150px;
+  }
+}
+
+@media (max-width: 992px) {
+  .call-action {
+    height: 350px;
+  }
+
+  .call-action .content {
+    padding: 60px 100px;
+  }
+
+  .call-action .content h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .call-action .content p {
+    font-size: 14px;
+  }
+
+  .call-action .content .btn, .call-action .content .second {
+    font-size: 15px;
+    padding: 8px 18px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .call-action {
+    height: 300px;
+  }
+
+  .call-action .content {
+    padding: 50px 50px;
+  }
+
+  .call-action .content h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .call-action .content p {
+    font-size: 13px;
+  }
+
+  .call-action .content .btn, .call-action .content .second {
+    font-size: 14px;
+    padding: 7px 16px;
+    width: auto;
+    margin: 10px auto;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 576px) {
+  .call-action {
+    height: 390px;
+  }
+
+  .call-action .content {
+    padding: 40px 0px;
+  }
+
+  .call-action .content h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .call-action .content p {
+    font-size: 12px;
+  }
+
+
+  @media (max-width: 576px) {
+    .call-action .content .btn, .call-action .content .second {
+      width: 100%; /* Make buttons full width on mobile */
+      margin: 10px 0; /* Ensure vertical spacing */
+    }
+  }
+
+  .call-action .content .second i {
+    margin-left: 5px;
+  }
+}
+.call-action .content .btn, .call-action .content .second {
+  font-size: 16px; /* Default font size */
+  padding: 0px 10px; /* Default padding */
+  display: inline-block; /* Allow them to be inline initially */
+  margin: 10px; /* Add margin for spacing */
+  width: auto; /* Set to auto width */
+}

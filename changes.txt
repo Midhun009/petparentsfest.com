@@ -1,0 +1,120 @@
+// submission without images 
+backend null true 
+
+
+const handleChange = async (e) => {
+  const { name, value, files } = e.target;
+
+  // Handle file inputs separately for compression and PDF handling
+  if (name === "pet_photo" || name === "passport_vaccine") {
+    const file = files[0]; // Get the selected file
+
+    if (file) {
+      try {
+        if (file.type.startsWith("image/")) {
+          // Compress the image if it's an image file
+          const compressedImage = await compressImage(file, 1024, 1024, 0.8);
+          const compressedFile = new File([compressedImage], file.name, {
+            type: file.type,
+          });
+
+          setFormData((prevData) => ({
+            ...prevData,
+            [name]: compressedFile, // Update the state with the compressed image
+          }));
+        } else if (file.type === "application/pdf") {
+          // Directly set the PDF file without compressing
+          setFormData((prevData) => ({
+            ...prevData,
+            [name]: file, // Update the state with the PDF file
+          }));
+        } else {
+          // Handle unsupported file types
+          console.error("Unsupported file type:", file.type);
+          alert("Please upload a valid image or PDF file.");
+        }
+      } catch (error) {
+        console.error("Error processing file:", error);
+      }
+    } else {
+      // If no file is selected, keep the state as null
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: null, // Ensure the field is set to null when no file is selected
+      }));
+    }
+  } else {
+    // For non-file inputs, just update the state
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
+
+  // If the pet category changes, update the category ID
+  if (name === "pet_category") {
+    const selectedCategory = petCategories.find(
+      (category) => category.id === parseInt(value)
+    );
+    if (selectedCategory) {
+      setFormData((prevData) => ({
+        ...prevData,
+        category_id: selectedCategory.id,
+      }));
+      console.log("Selected Pet Category ID:", selectedCategory.id);
+    }
+  }
+};
+
+
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const data = new FormData();
+
+  // Append form data
+  Object.keys(formData).forEach((key) => {
+    if (formData[key] !== null) {  // Ensure no null fields are added to the FormData
+      data.append(key, formData[key]);
+    }
+  });
+
+  // Append selected competitions if they are selected
+  if (selectedCompetitions.length > 0) {
+    data.append("competitions", selectedCompetitions.join(",")); // Join array into comma-separated string
+  }
+
+  console.log("Form Data:", Array.from(data.entries())); // Log to check form data
+
+  fetch("http://127.0.0.1:8000/api/pet-registration/", {
+    method: "POST",
+    body: data,
+    headers: {
+      "X-CSRFToken": getCookie("csrftoken"),
+    },
+  })
+    .then((response) => response.text())
+    .then((text) => {
+      console.log("Response text:", text);
+      const data = JSON.parse(text);
+      if (data.success) {
+        toast.success(data.message || "Registration submitted successfully!");
+        setFormData(initialFormState); // Reset form after successful submission
+      } else {
+        toast.error(
+          data.error ||
+            "Submission failed. Please check your inputs and try again."
+        );
+      }
+    })
+    .catch((error) => {
+      console.error("Error during submission:", error);
+      toast.error("Form submission failed. Please try again.");
+    });
+};
+
+
+
+
+

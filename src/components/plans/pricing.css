@@ -1,0 +1,165 @@
+.pricing-title h2{
+    position: relative;
+    font-size: 15px;
+    color: #fb5849;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-left: 40px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+.pricing-title h2:before {
+    width: 30px;
+    height: 1px;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    background-color: #fb5849;
+}
+.pricing-title h3{
+    line-height: 40px;
+    margin-top: 9px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2a2a2a;
+    text-transform: capitalize;
+}
+.pricing-table{
+	background:#f9f9f9;
+	position:relative;
+}
+.pricing-table .single-table {
+	background: #fff;
+	border:1px solid #ddd;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	margin: 15px 0;
+	padding:0px 15px 0px 15px;
+    min-height: 620px;
+}
+.pricing-table .single-table .table-list {
+    padding: 10px 0;
+    text-align: left;
+    margin-top: 30px;
+    max-height: 400px; /* Set a max height for the list */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+/* Table Head */
+.pricing-table .single-table .table-head {
+	text-align:center;
+}
+.pricing-table .single-table .icon i{
+	font-size:65px;
+	color:#1a76d1;
+}
+.pricing-table .single-table .title {
+	font-size: 21px;
+	color: #2C2D3F;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+.pricing-table .single-table .amount {
+	font-size:36px;
+	font-weight:600;
+	color:#1a76d1;
+}
+.pricing-table .single-table .amount span{
+	display:inline-block;
+	font-size:14px;
+	font-weight:400;
+	color:#868686;
+	margin-left:8px;
+}
+/* Table List */
+.pricing-table .single-table .table-list {
+	
+	text-align: left;
+	margin-top: 30px;
+}
+.pricing-table .table-list li {
+    position: relative;
+    color: #666;
+    text-transform: capitalize;
+    margin-bottom: 18px;
+    padding-left: 32px; 
+}
+
+.pricing-table .table-list li:last-child{
+	margin-bottom:0px;
+}
+.pricing-table .table-list li.cross i{
+	background:#aaaaaa;
+}
+.pricing-table .table-list i {
+    font-size: 7px;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #fff;
+    background: #1a76d1;
+    border-radius: 100%;
+    display: inline-block; /* Use inline-block for proper alignment */
+    margin-right: 10px; /* Space between icon and text */
+    position: absolute; /* Keep the icon in a specific position */
+    left: 0; /* Move it to the left */
+	margin-top:5px
+}
+/* Button Styles */
+.pricing-table .btn {
+    color: #fff;
+    background-color: #fb5849; /* Set background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 90px; /* Increase padding for larger buttons */
+    font-size: 18px; /* Increase font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.pricing-table .btn:hover {
+    background-color: #1a76d1; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Button Icon Styles */
+.pricing-table .btn i {
+    color: #FFD700; /* Change icon color */
+    font-size: 20px; /* Increase icon size for better visibility */
+}
+
+/* Table Bottom Styles */
+.pricing-table .table-bottom {
+    border-top: 2px solid #e0e0e0; /* Add a top border for separation */
+    padding: 15px 0; /* Add padding for spacing */
+    text-align: center; /* Center the content */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .pricing-table .btn {
+        padding: 12px 25px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Smaller font size on mobile */
+    }
+
+    .pricing-table .btn i {
+        font-size: 18px; /* Smaller icon size on mobile */
+    }
+}
+/* Optional: Style the scrollbar for a nicer appearance */
+.pricing-table .single-table .table-list::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+}
+
+.pricing-table .single-table .table-list::-webkit-scrollbar-thumb {
+    background-color: #1a76d1; /* Set the color of the scrollbar */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.pricing-table .single-table .table-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background for the scrollbar track */
+}

@@ -1,0 +1,137 @@
+/* Carousel Container */
+
+.carousel-container {
+  text-align: left;
+  padding: 20px;
+  overflow: hidden;
+}
+
+
+/* Remove white border by resetting border and margin */
+.carousel-slider .carousel-slide {
+  position: relative;
+  background-color: transparent; /* Ensure no white background */
+  border: none; /* Remove any border that may exist */
+  border-radius: 8px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0; /* Reset padding */
+  margin: 0 10px; /* Add horizontal margin for gap */
+}
+
+/* Image Styling */
+.slide-background {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: none; /* No border around the image */
+  margin: 0px 25px;
+}
+
+/* Ensure the slick-slide and slick-track don't add extra spacing */
+.slick-slide {
+  margin: 0 !important; /* Important to override any default margin */
+  padding: 0 !important; /* Ensure no padding is added */
+}
+
+.slick-track {
+  margin: 0;
+  padding: 0;
+}
+
+/* Number Styling */
+.slide-number {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #00000073;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* Text Styling */
+.slide-text {
+  font-size: 19px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  z-index: 1;
+  text-align: left;
+  width: 100%;
+  transition: transform 0.3s ease, color 0.3s ease; /* Add transition */
+  word-break: break-word; /* Break long words onto the next line */
+  overflow-wrap: break-word; 
+}
+
+/* Hover Effect */
+.carousel-slider .carousel-slide:hover .slide-text {
+  transform: translateX(-50%) translateY(-5px); /* Move text up on hover */
+  color: #FFB100; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-slider .carousel-slide {
+    height: 350px;
+  }
+
+  .slide-number {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .slide-text {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 10px;
+  }
+
+  .carousel-slider .carousel-slide {
+    height: 300px;
+  }
+
+  .slide-number {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .slide-text {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-container {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 37px;
+    margin-top: -10px;
+  }
+}

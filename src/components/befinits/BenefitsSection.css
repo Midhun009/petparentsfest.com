@@ -1,0 +1,116 @@
+
+.background-image {
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.text-overlay {
+  text-align: left;
+  margin-bottom: 40px;
+
+}
+
+.text-overlay h1 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.text-overlay h2 {
+  line-height: 40px;
+  margin-top: 9px;
+  margin-bottom: 6px;
+  font-size: 30px;
+  font-weight :700
+ 
+}
+
+
+.cards-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 0px;
+}
+
+
+.card {
+  background-color: rgb(253, 253, 253) !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  width: 230px !important;
+  color: #000 !important; 
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fb5849;
+}
+.benefits-section .description {
+  font-size: 1.3rem; 
+  margin-top: 50px; 
+  text-align: center; 
+  font-weight: normal;
+}
+
+.text-overlay h6 {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-left: 40px;
+}
+.text-overlay h6:before {
+  width: 30px;
+  height: 1px;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  background-color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .text-overlay h1 {
+      font-size: 2rem;
+  }
+
+  .text-overlay h2 {
+      font-size: 1.2rem;
+  }
+
+  .card {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-overlay h1 {
+      font-size: 1.5rem;
+  }
+
+  .text-overlay h2 {
+      font-size: 1.5rem;
+  }
+
+  .background-image {
+      padding: 40px 10px;
+  }
+
+  .cards-container {
+      gap: 10px;
+  }
+
+
+}
+@media (min-width: 1024px) {
+  .text-overlay {
+    text-align: left;
+    margin-left: 115px;
+  }
+}

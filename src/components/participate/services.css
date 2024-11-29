@@ -1,0 +1,103 @@
+.services.section {
+    padding: 50px 20px; /* Add space to the left and right */
+    background-color: #ffffff;
+}
+
+.section-title h3 {
+    line-height: 40px;
+    margin-top: 9px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2a2a2a;
+    text-transform: capitalize;
+}
+
+.container {
+    max-width: 1200px; /* Set a max-width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.services .single-service {
+    margin: 20px 15px; /* Reduce margin for better spacing */
+    position: relative;
+    padding: 20px; /* Padding inside the card */
+    border-radius: 12px; /* Rounded corners */
+    background-color: #f0f0f01a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center items */
+    flex: 1 1 calc(25% - 30px); /* Make services responsive, 4 per row */
+    min-width: 250px; /* Minimum width for each card */
+    max-width: 300px; /* Max width for better alignment */
+}
+
+.services .single-service:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.services .single-service i {
+    font-size: 30px;
+    color: #fb5849;
+    background-color: #ffffff; /* Background for the circular icon */
+    border-radius: 50%; /* Make it circular */
+    padding: 15px; /* Add some padding for size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.services .single-service h4 {
+    text-transform: capitalize;
+    margin-bottom: 0; /* Remove bottom margin */
+    color: #2C2D3F;
+    font-weight: 300;
+    font-size: 16px;
+    flex-grow: 1; /* Make the heading take up remaining space */
+}
+
+.services .single-service p {
+    color: #868686;
+    margin-top: 5px; /* Add some space above the paragraph */
+	font-size: 10px;
+	line-height: normal;
+}
+
+.row-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Add a gap between the service cards */
+}
+.service-icon {
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between icon and title */
+  }
+  
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .services .single-service {
+        flex: 1 1 calc(50% - 30px); /* Two items per row for medium screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .services .single-service {
+        flex: 1 1 100%; /* Full width for each item on small screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .section-title h3{
+        font-size: 18px;
+        line-height: 20px;
+    }
+    
+    .services .single-service h4,
+    .services .single-service p {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+}

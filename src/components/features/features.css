@@ -1,0 +1,112 @@
+.Features {
+  position: relative;
+  padding: 60px 0;
+  background-image: url("/src/images/paw.png");
+  background-size: cover; /* Ensure the background covers the section */
+}
+
+.section-title {
+  position: relative;
+  font-size: 15px;
+  color: #fb5849;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-left: 40px;
+  text-align: left;
+  margin-bottom: 25px;
+
+}
+
+.section-title h6:before {
+  width: 30px;
+  height: 1px;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  background-color: #fb5849;
+  
+}
+.section-title h2{
+line-height: 40px;
+margin-top: 9px;
+margin-bottom: 25px;
+font-size: 30px;
+font-weight: 700;
+color: #f2f2f2;
+letter-spacing: normal !important;
+text-transform: none ;
+}
+
+.features-cards {
+  display: flex;
+  justify-content: space-between; /* Even spacing between cards */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  padding: 0px; /* Add padding to ensure cards are not stuck to the edges */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent background for readability */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(20% - 20px); /* Adjust width to allow for margins */
+  text-align: center;
+  margin: 10px; /* Margin for spacing between cards */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.card-icon {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  display: block; /* Center alignment */
+  margin: 0 auto 10px; /* Center icon and add spacing below */
+}
+.card h3 {
+  font-size: 16px; /* Adjust font size as needed */
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 767px) {
+  .features-cards {
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    width: 300px;
+    
+  }
+
+  .features-cards .card { /* Assuming .card is the class for your individual cards */
+    width: 100%; /* Increase the card width */
+    margin: 10px auto; /* Center the cards and add margin */
+    
+  }
+}
+@media (max-width: 768px) {
+  
+
+  .section-title h2 {
+    font-size: 20px; /* Smaller font size for mobile */
+    margin-bottom: 15px; /* Adjust margin for mobile */
+    line-height: 30px;
+  }
+  .section-title{
+    padding-left: 40px !important;
+  }
+  .col-lg-12{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+}
